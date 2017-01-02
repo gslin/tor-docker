@@ -1,4 +1,4 @@
-Running [Tor](https://www.torproject.org/) (socks5) in [docker](https://www.docker.com/).
+Running [Tor](https://www.torproject.org/) (socks5) in [Docker](https://www.docker.com/) container.
 
 Command
 =======
