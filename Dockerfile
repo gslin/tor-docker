@@ -10,6 +10,6 @@ RUN gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD
     apt-get dist-upgrade -y && \
     apt-get install -y deb.torproject.org-keyring tor && \
     apt-get clean && \
-    echo "SOCKSPort 0.0.0.0:9050" | tee -a /etc/tor/torrc
+    echo "SOCKSPort 0.0.0.0:9050 PreferSOCKSNoAuth" | tee -a /etc/tor/torrc
 EXPOSE 9050
 ENTRYPOINT ["/usr/sbin/tor"]
