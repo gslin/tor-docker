@@ -1,5 +1,5 @@
 #
-FROM debian:jessie
+FROM debian:jessie-20171009
 MAINTAINER gslin@gslin.org
 RUN gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 && \
     gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - && \
