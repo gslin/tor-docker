@@ -1,5 +1,5 @@
 #
-FROM debian:stretch-20171009
+FROM debian:stretch-20171210
 MAINTAINER gslin@gslin.org
 RUN sed -i -e 's/deb.debian.org/httpredir.debian.org/g' /etc/apt/sources.list && \
     apt-get update -y && \
