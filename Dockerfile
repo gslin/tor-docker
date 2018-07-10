@@ -1,5 +1,5 @@
 #
-FROM debian:stretch-20180426
+FROM debian:stretch-20180625
 MAINTAINER gslin@gslin.org
 COPY A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.publickey /tmp/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.publickey
 RUN sed -i -e 's/deb.debian.org/httpredir.debian.org/g' /etc/apt/sources.list && \
