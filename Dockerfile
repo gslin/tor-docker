@@ -9,7 +9,7 @@ RUN sed -i -e 's/deb.debian.org/httpredir.debian.org/g' /etc/apt/sources.list &&
     echo "deb https://deb.torproject.org/torproject.org stretch main" | tee /etc/apt/sources.list.d/tor.list && \
     echo "deb-src https://deb.torproject.org/torproject.org stretch main" | tee -a /etc/apt/sources.list.d/tor.list && \
     apt-get update -y && \
-    apt-get install -y deb.torproject.org-keyring tor=0.3.3.8-1~d90.stretch+1 && \
+    apt-get install -y deb.torproject.org-keyring tor=0.3.4.8-1~d90.stretch+1 && \
     apt-get clean && \
     echo "SOCKSPort 0.0.0.0:9050 PreferSOCKSNoAuth" | tee -a /etc/tor/torrc
 EXPOSE 9050
