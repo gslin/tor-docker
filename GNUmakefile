@@ -1,4 +1,7 @@
 #
+.PHONY:	build push
+
+#
 NOW=	$(shell date +%Y%m%d-%H%m%S)
 
 #
