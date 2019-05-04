@@ -9,4 +9,4 @@ Use this command to run once only:
 
 Use this command to register (run at booting):
 
-    docker run --restart always -p 127.0.0.1:9050:9050 -d gslin/tor
+    docker run -dit -p 9050:9050 --restart always gslin/tor:latest
