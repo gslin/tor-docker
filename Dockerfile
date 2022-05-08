@@ -1,15 +1,15 @@
 #
-FROM debian:stretch-20191118
+FROM debian:buster-20210511
 MAINTAINER gslin@gslin.org
-COPY A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.publickey /tmp/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.publickey
+COPY A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc /tmp/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
 RUN sed -i -e 's/deb.debian.org/httpredir.debian.org/g' /etc/apt/sources.list && \
     apt-get update -y && \
-    apt-get install -y apt-transport-https gnupg && \
-    apt-key add /tmp/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.publickey && \
-    echo "deb https://deb.torproject.org/torproject.org stretch main" | tee /etc/apt/sources.list.d/tor.list && \
-    echo "deb-src https://deb.torproject.org/torproject.org stretch main" | tee -a /etc/apt/sources.list.d/tor.list && \
+    apt-get install -y apt-transport-https ca-certificates gnupg && \
+    apt-key add /tmp/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc && \
+    echo "deb https://deb.torproject.org/torproject.org buster main" | tee /etc/apt/sources.list.d/tor.list && \
+    echo "deb-src https://deb.torproject.org/torproject.org buster main" | tee -a /etc/apt/sources.list.d/tor.list && \
     apt-get update -y && \
-    apt-get install -y deb.torproject.org-keyring tor=0.4.1.6-1~d9.stretch+1 && \
+    apt-get install -y deb.torproject.org-keyring tor=0.4.5.9-1~d10.buster+1 && \
     apt-get clean && \
     echo "SOCKSPort 0.0.0.0:9050 PreferSOCKSNoAuth" | tee -a /etc/tor/torrc
 EXPOSE 9050
